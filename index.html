@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robert's Housing - Build Your Dream Home</title>
+<style>
+/* Reset & Body */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Arial',sans-serif;line-height:1.6;color:#333;scroll-behavior:smooth;background:#f5f7fa;}
+
+/* Header */
+header{position:fixed;width:100%;background:#2E86C1;color:#fff;z-index:1000;top:0;}
+header nav{display:flex;justify-content:center;padding:15px 0;gap:25px;}
+header nav a{color:#fff;text-decoration:none;font-weight:bold;transition:color 0.3s;}
+header nav a:hover{color:#FFD700;}
+
+/* Hero */
+.hero{height:500px;display:flex;justify-content:center;align-items:center;text-align:center;
+      background:linear-gradient(to right, #2E86C1, #5DADE2);color:#fff;font-size:2.5rem;
+      position:relative;overflow:hidden;}
+.hero h1{animation:fadeIn 2s ease-in-out;}
+@keyframes fadeIn{0%{opacity:0;transform:translateY(-20px);}100%{opacity:1;transform:translateY(0);}}
+
+/* Sections */
+section{padding:80px 20px;text-align:center;opacity:0;transform:translateY(50px);transition:opacity 1s ease-out, transform 1s ease-out;}
+section.visible{opacity:1;transform:translateY(0);}
+
+/* Cards */
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
+.card{background:#fff;border-radius:12px;overflow:hidden;width:300px;box-shadow:0 8px 20px rgba(0,0,0,0.1);transition:transform 0.3s,box-shadow 0.3s;}
+.card:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(0,0,0,0.2);}
+.card img{width:100%;display:block;}
+.card h3{margin:10px;}
+.card p{padding:0 10px 10px 10px;color:#555;}
+
+/* Buttons */
+button{padding:10px 20px;background:#2E86C1;color:#fff;border:none;border-radius:5px;cursor:pointer;transition:0.3s;}
+button:hover{background:#1B4F72;transform:scale(1.05);}
+
+/* Contact Form */
+form{max-width:500px;margin:auto;text-align:left;}
+form input,form textarea{width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:5px;transition:border-color 0.3s;}
+form input:focus,form textarea:focus{border-color:#2E86C1;outline:none;}
+
+/* Footer */
+footer{background:#333;color:#fff;text-align:center;padding:20px 0;}
+
+/* Background Animations */
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+.hero::before{
+content:"";position:absolute;top:0;left:0;width:100%;height:100%;
+background:linear-gradient(-45deg,#2E86C1,#5DADE2,#85C1E9,#AED6F1);
+background-size:400% 400%;z-index:0;animation:gradientBG 15s ease infinite;
+opacity:0.6;
+}
+.hero h1{position:relative;z-index:1;color:#fff;}
+
+/* Responsive */
+@media(max-width:768px){.cards{flex-direction:column;align-items:center;}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#plans">House Plans</a>
+    <a href="#tools">Tools & Accessories</a>
+    <a href="#partners">Partners</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <h1>Robert's Housing - Build Your Dream Home</h1>
+</div>
+
+<section id="plans">
+  <h2>House Plans</h2>
+  <p>Explore our modern house plans with full specifications.</p>
+  <div class="cards">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Modern Villa">
+      <h3>Modern Villa</h3>
+      <p>4 bedrooms, smart living, open-plan design.</p>
+      <button>View Plan</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Urban Apartment">
+      <h3>Urban Apartment</h3>
+      <p>Compact city apartment for small plots.</p>
+      <button>View Plan</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Eco House">
+      <h3>Eco-Friendly House</h3>
+      <p>Green construction with solar panels and sustainable materials.</p>
+      <button>View Plan</button>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <h2>Construction Tools & Accessories</h2>
+  <p>Everything you need to build, from hammers to smart home accessories.</p>
+  <div class="cards">
+    <div class="card"><img src="https://via.placeholder.com/200x150" alt="Hammer"><h3>Hammer</h3><button>Buy Now</button></div>
+    <div class="card"><img src="https://via.placeholder.com/200x150" alt="Cement"><h3>Cement</h3><button>Buy Now</button></div>
+    <div class="card"><img src="https://via.placeholder.com/200x150" alt="Bricks"><h3>Bricks</h3><button>Buy Now</button></div>
+    <div class="card"><img src="https://via.placeholder.com/200x150" alt="Paints"><h3>Paints</h3><button>Buy Now</button></div>
+    <div class="card"><img src="https://via.placeholder.com/200x150" alt="Smart Lights"><h3>Smart Lights</h3><button>Buy Now</button></div>
+  </div>
+</section>
+
+<section id="partners">
+  <h2>Join Us / Become a Partner</h2>
+  <p>If you are an engineer, contractor, or supplier, join our network.</p>
+  <form>
+    <label>Name:</label><input type="text" placeholder="Your Name" required>
+    <label>Email:</label><input type="email" placeholder="Your Email" required>
+    <label>Role:</label><input type="text" placeholder="Engineer / Partner / Supplier" required>
+    <button type="submit">Join Us</button>
+  </form>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Reach out for any questions, guidance, or collaboration.</p>
+  <form>
+    <label>Name:</label><input type="text" placeholder="Your Name" required>
+    <label>Email:</label><input type="email" placeholder="Your Email" required>
+    <label>Message:</label><textarea rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 Robert's Housing. All rights reserved.
+</footer>
+
+<script>
+// Scroll animations
+const sections=document.querySelectorAll('section');
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.1});
+sections.forEach(section=>observer.observe(section));
+</script>
+
+</body>
+</html>
